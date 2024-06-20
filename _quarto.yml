@@ -1,0 +1,54 @@
+project:
+  type: website
+  output-dir: docs
+  
+execute: 
+  cache: true
+  freeze: auto
+
+website:
+  title: "Manchas foliares no Milho"
+  favicon: 01.jpg
+
+  navbar:
+   pinned: true
+   background: "#323f45"
+   logo: 01.png
+   left:
+   - text: Sobre
+     icon: house
+     href: index.qmd
+   - text: Obtenção dos dados
+     icon: clipboard
+     href: about.qmd
+   - text: Análise
+     icon: file-code
+     href: FIP606_ANA.qmd
+  
+   right:
+       - icon: github
+         menu: 
+            - text: Klaus Henrique Ratunde
+              url: https://github.com/KlausRatunde
+            - text: Mariana M. F. Lourenço
+              url: https://github.com/MaarianaMartins
+         
+         
+  page-navigation: true
+  page-footer: 
+    left: "Copyright 2024, Klaus Henrique Ratunde & Mariana M. F. Lourenço"
+    background: "#323f45"
+    
+format:
+  html:
+    fontsize: 1.1em
+    theme: 
+      light: solar
+      dark: slate
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    warning: false
+
+editor: visual
+
