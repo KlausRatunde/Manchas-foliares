@@ -1,7 +1,6 @@
-base
-methods
-datasets
-utils
-grDevices
-graphics
-stats
+leaflet
+ggplot2
+plotly
+r4pde
+rnaturalearth
+agricolae

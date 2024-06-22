@@ -62,7 +62,7 @@ prod |>
     var_prod_ha = var(prod_ha))
 ```
 
-##Testar as premissas
+## Testar as premissas
 
 Antes de utilizar qualquer teste para comparação de médias, é necessário testar se o conjunto de dados respeitam as premissas para então iniciar os testes de comparação de médias. Podemos usar várias opções, as que são utilizadas abaixo são os testes de shapiro wilk (para normalidade), o teste de bartlett (para homogeneidade). Da mesma forma, também pode ser utilizado as funções do pacote performance, que utiliza outros testes para averiguar a normalidade e homogeineidade dos dados. Portanto, a partir dos testes utilizados é possível afirmar que os dados seguem uma distribuição normal e homogênea. Dessa forma, o conjunto de dados respeita as premissas para a utilização do modelo e da ANOVA, portanto, as análises podem seguir normalmente.
 
@@ -319,8 +319,7 @@ sev3 |> group_by(trat) |>
 
 ### Severidade médias nas plantas
 
-Foram avaliadas as severidades na parcela e nas folhas, para avaliação da severidade nas folhas foram analisadas 3 folhas em diferentes posições, acima da espiga, a da espiga e abaixo, realizando uma média das posições das folhas. 
-
+Foram avaliadas as severidades na parcela e nas folhas, para avaliação da severidade nas folhas foram analisadas 3 folhas em diferentes posições, acima da espiga, a da espiga e abaixo, realizando uma média das posições das folhas.
 
 ```{r}
 sev2 |>
@@ -368,8 +367,6 @@ ggplot(aes(data_av, mean_sevpl, color = trat))+
   theme(legend.title.position = "bottom")
 
 ```
-
-
 
 ### Área abaixo da curva
 
@@ -436,9 +433,8 @@ sev |>
 sev3$raiz_sev2 <- sqrt(sev3$sev_med_pl)
 ```
 
-
-
 ###Ymax nas plantas
+
 ```{r}
 ymax_pl <- lm(raiz_sev2 ~ trat + factor(bloco),
              data = sev3)
@@ -468,4 +464,3 @@ sev3 |> group_by(trat) |>
   labs(x = "Tratamentos",
        y = "Severidade média das plantas")
 ```
-

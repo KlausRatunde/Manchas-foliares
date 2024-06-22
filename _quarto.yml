@@ -43,8 +43,8 @@ format:
   html:
     fontsize: 1.1em
     theme: 
-      light: solar
       dark: slate
+      light: solar
     toc: true
     code-copy: true
     code-overflow: wrap

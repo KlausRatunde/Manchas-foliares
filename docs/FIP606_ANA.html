@@ -70,11 +70,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -170,7 +170,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#parte-01---produtividade" id="toc-parte-01---produtividade" class="nav-link active" data-scroll-target="#parte-01---produtividade">PARTE 01 - produtividade</a>
+  <li><a href="#parte-01---produtividade" id="toc-parte-01---produtividade" class="nav-link active" data-scroll-target="#parte-01---produtividade">PARTE 01 - produtividade</a></li>
+  <li><a href="#testar-as-premissas" id="toc-testar-as-premissas" class="nav-link" data-scroll-target="#testar-as-premissas">Testar as premissas</a>
   <ul class="collapse">
   <li><a href="#anova" id="toc-anova" class="nav-link" data-scroll-target="#anova">ANOVA</a></li>
   <li><a href="#calculando-as-médias" id="toc-calculando-as-médias" class="nav-link" data-scroll-target="#calculando-as-médias">Calculando as médias</a></li>
@@ -267,7 +268,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 5 5           10755.       635.     403504.</code></pre>
 </div>
 </div>
-<p>##Testar as premissas</p>
+</section>
+<section id="testar-as-premissas" class="level2">
+<h2 class="anchored" data-anchor-id="testar-as-premissas">Testar as premissas</h2>
 <p>Antes de utilizar qualquer teste para comparação de médias, é necessário testar se o conjunto de dados respeitam as premissas para então iniciar os testes de comparação de médias. Podemos usar várias opções, as que são utilizadas abaixo são os testes de shapiro wilk (para normalidade), o teste de bartlett (para homogeneidade). Da mesma forma, também pode ser utilizado as funções do pacote performance, que utiliza outros testes para averiguar a normalidade e homogeineidade dos dados. Portanto, a partir dos testes utilizados é possível afirmar que os dados seguem uma distribuição normal e homogênea. Dessa forma, o conjunto de dados respeita as premissas para a utilização do modelo e da ANOVA, portanto, as análises podem seguir normalmente.</p>
 <section id="anova" class="level3">
 <h3 class="anchored" data-anchor-id="anova">ANOVA</h3>
@@ -1242,7 +1245,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  let localAlternateSentinel = 'alternate';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
