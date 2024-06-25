@@ -1,0 +1,2 @@
+"0","cor_prod <- cor(prod2)"
+"0","corrplot(cor_prod, method = 'number', type = 'upper', diag = FALSE)"

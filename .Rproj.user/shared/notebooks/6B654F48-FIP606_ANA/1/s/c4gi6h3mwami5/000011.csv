@@ -1,0 +1,5 @@
+"0","sev |> "
+"0","  group_by(trat) |> "
+"0","  summarise(med_sev_par = mean(sev_parcela),"
+"0","   sd_sev_par = sd(sev_parcela),"
+"0","   var_sev_par = var(sev_parcela))"

@@ -1,0 +1,4 @@
+"0","sev3 |> group_by(trat) |> "
+"0","  summarise(sevpar_mean = mean(sev_parcela),"
+"0","            sevpar_se = (sd(sev_parcela)/sqrt(4))) |>"
+"0","  mutate(control = 1- sevpar_mean/2.475)"

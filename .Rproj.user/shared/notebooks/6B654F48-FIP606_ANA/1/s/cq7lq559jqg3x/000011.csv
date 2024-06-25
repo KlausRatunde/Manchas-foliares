@@ -1,0 +1,5 @@
+"0","curva_pl <- sev2 |>"
+"0","  group_by(trat, bloco) |> "
+"0","  summarise(aacpd = AUDPC(ava, sev_med_pl))"
+"2","`summarise()` has grouped output by 'trat'. You can override using the `.groups` argument."
+"0","curva_pl"

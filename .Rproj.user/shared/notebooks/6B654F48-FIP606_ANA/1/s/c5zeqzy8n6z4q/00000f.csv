@@ -1,0 +1,2 @@
+"0","sev <- gsheet2tbl(""https://docs.google.com/spreadsheets/d/1fkuSU5GJ0ucCVQw5DY3wNOtaiJZpSXnZBCWjruIUNQQ/edit#gid=756072264"")"
+"0","# sev$sev_parcela <- as.numeric(sev$sev_parcela)"

@@ -1,0 +1,4 @@
+"0","prod3 <- correlacao |> "
+"0","  dplyr::select(ymax_par, prod_ha, ymax_pl)"
+"0",""
+"0","corgraph(prod3)"

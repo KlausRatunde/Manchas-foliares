@@ -1,0 +1,5 @@
+"0","prod <- gsheet2tbl(""https://docs.google.com/spreadsheets/d/1fkuSU5GJ0ucCVQw5DY3wNOtaiJZpSXnZBCWjruIUNQQ/edit#gid=0"")"
+"0",""
+"0","prod <- prod |> "
+"0","  mutate(trat = as.factor(trat),"
+"0","         bloco = as.factor(bloco))"

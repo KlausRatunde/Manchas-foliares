@@ -1,0 +1,4 @@
+"0","prod2 <- prod |> "
+"0","  dplyr::select(prod_ha, sev_parcela, raiz_sev2)"
+"0",""
+"0","corgraph(prod2)"

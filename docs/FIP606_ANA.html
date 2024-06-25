@@ -170,22 +170,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#parte-01---produtividade" id="toc-parte-01---produtividade" class="nav-link active" data-scroll-target="#parte-01---produtividade">PARTE 01 - produtividade</a></li>
-  <li><a href="#testar-as-premissas" id="toc-testar-as-premissas" class="nav-link" data-scroll-target="#testar-as-premissas">Testar as premissas</a>
+  <li><a href="#parte-01---severidade" id="toc-parte-01---severidade" class="nav-link active" data-scroll-target="#parte-01---severidade">PARTE 01 - Severidade</a>
   <ul class="collapse">
-  <li><a href="#anova" id="toc-anova" class="nav-link" data-scroll-target="#anova">ANOVA</a></li>
-  <li><a href="#calculando-as-médias" id="toc-calculando-as-médias" class="nav-link" data-scroll-target="#calculando-as-médias">Calculando as médias</a></li>
-  <li><a href="#atribuindo-diferença-ou-não-às-médias" id="toc-atribuindo-diferença-ou-não-às-médias" class="nav-link" data-scroll-target="#atribuindo-diferença-ou-não-às-médias">Atribuindo diferença ou não às médias</a></li>
-  </ul></li>
-  <li><a href="#parte-2---severidade" id="toc-parte-2---severidade" class="nav-link" data-scroll-target="#parte-2---severidade">PARTE 2 - Severidade</a></li>
   <li><a href="#severidade-na-parcela" id="toc-severidade-na-parcela" class="nav-link" data-scroll-target="#severidade-na-parcela"><strong>Severidade na parcela</strong></a>
   <ul class="collapse">
   <li><a href="#curva-de-progresso-da-doença" id="toc-curva-de-progresso-da-doença" class="nav-link" data-scroll-target="#curva-de-progresso-da-doença">Curva de progresso da doença</a></li>
-  <li><a href="#calcular-área-abaixo-da-curva" id="toc-calcular-área-abaixo-da-curva" class="nav-link" data-scroll-target="#calcular-área-abaixo-da-curva">Calcular área abaixo da curva</a></li>
+  <li><a href="#área-abaixo-da-curva---parcela" id="toc-área-abaixo-da-curva---parcela" class="nav-link" data-scroll-target="#área-abaixo-da-curva---parcela">Área abaixo da curva - parcela</a></li>
   <li><a href="#testes-de-premissas-e-anova" id="toc-testes-de-premissas-e-anova" class="nav-link" data-scroll-target="#testes-de-premissas-e-anova">Testes de premissas e ANOVA</a></li>
-  <li><a href="#severidade-médias-nas-plantas" id="toc-severidade-médias-nas-plantas" class="nav-link" data-scroll-target="#severidade-médias-nas-plantas">Severidade médias nas plantas</a></li>
+  <li><a href="#eficácia-de-controle" id="toc-eficácia-de-controle" class="nav-link" data-scroll-target="#eficácia-de-controle">Eficácia de controle</a></li>
+  </ul></li>
+  <li><a href="#severidade-médias-nas-plantas" id="toc-severidade-médias-nas-plantas" class="nav-link" data-scroll-target="#severidade-médias-nas-plantas">Severidade médias nas plantas</a>
+  <ul class="collapse">
   <li><a href="#área-abaixo-da-curva" id="toc-área-abaixo-da-curva" class="nav-link" data-scroll-target="#área-abaixo-da-curva">Área abaixo da curva</a></li>
+  <li><a href="#anova" id="toc-anova" class="nav-link" data-scroll-target="#anova">ANOVA</a></li>
+  <li><a href="#ymax-nas-plantas" id="toc-ymax-nas-plantas" class="nav-link" data-scroll-target="#ymax-nas-plantas">Ymax nas plantas</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#parte-02---produtividade" id="toc-parte-02---produtividade" class="nav-link" data-scroll-target="#parte-02---produtividade">PARTE 02 - Produtividade</a>
+  <ul class="collapse">
+  <li><a href="#visualização-dos-dados" id="toc-visualização-dos-dados" class="nav-link" data-scroll-target="#visualização-dos-dados">Visualização dos dados</a></li>
+  <li><a href="#sumarizar-os-dados" id="toc-sumarizar-os-dados" class="nav-link" data-scroll-target="#sumarizar-os-dados">Sumarizar os dados</a></li>
+  <li><a href="#testar-as-premissas" id="toc-testar-as-premissas" class="nav-link" data-scroll-target="#testar-as-premissas">Testar as premissas</a>
+  <ul class="collapse">
   <li><a href="#anova-1" id="toc-anova-1" class="nav-link" data-scroll-target="#anova-1">ANOVA</a></li>
+  </ul></li>
+  <li><a href="#correlação-ymax" id="toc-correlação-ymax" class="nav-link" data-scroll-target="#correlação-ymax">Correlação Ymax</a></li>
+  <li><a href="#correlação-ymax-1" id="toc-correlação-ymax-1" class="nav-link" data-scroll-target="#correlação-ymax-1">Correlação Ymax</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -210,7 +220,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-1_e606e0fff37052f4754f9d6f8e80fa9c">
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-1_29407af3749452600f5664f38c1057c8">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gsheet)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -222,302 +232,134 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multcomp)</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(agricolae)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_classic</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(AgroR)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_classic</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="parte-01---produtividade" class="level2">
-<h2 class="anchored" data-anchor-id="parte-01---produtividade">PARTE 01 - produtividade</h2>
-<p>Os dados são obtidos a partir de um experimento que visa analisar a interferência de diferentes fungicidas (nativo e bio ferti (fertlizante de silicato de potássio, como indutor de resistência)) e as diferentes ordens em que eles são aplicados sob a severidade das doenças de manchas foliares causadas por patogénos como: Stenocarpella sp., Diplodia sp., Bipolaris maydis e Bipolaris zeicola, Helmintosporiose sp. e entre outros agentes causais. É um experimento com delineamento em blocos casualizados, em que eram 4 blocos e 5 tratamentos, totalizando 20 parcelas. Em que, os tratamentos eram: Fertilizante + Fungicida + Fungicia (T1), Fungicida + Fertilizante + Funcida (T2), Fertilizante + Fertilizante + Fertilizante (T3), Fungicida (T4) e a testemunha (T5). Para a produtividade foi obtido o número de espigas e o peso dos grãos de 15 espigas, esses valores foram calculados gerando o peso médio de cada espiga e a partir disso, foi estipulado para 1 hectare, a produtividade do experimento, obtendo então uma varíavel resposta númerica contínua.</p>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-2_8b0ab55df1c1611a216a555a9b4d7dc8">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>prod <span class="ot">&lt;-</span> <span class="fu">gsheet2tbl</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1fkuSU5GJ0ucCVQw5DY3wNOtaiJZpSXnZBCWjruIUNQQ/edit#gid=0"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>prod <span class="ot">&lt;-</span> prod <span class="sc">|&gt;</span> </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">trat =</span> <span class="fu">as.factor</span>(trat),</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">bloco =</span> <span class="fu">as.factor</span>(bloco))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>#Visualização dos dados</p>
-<p>Em um primeiro momento será realizada a análise dos dados de forma visual para buscar compreender a natureza dos dados e se eles seguem uma distribuição normal e uma homogeneidade das médias, também busca-se verificar se existe uma variação ou não nas médias apresentadas para então seguir com as análises estatísticas.A partir da visualização dos dados com o gráfico de boxplot e levando somente ele em consideração para a interpretação, podemos assumir que as médias estão próximas umas das outras e que existe pouca diferença entre os tratamentos, porém para o tratamento 1 pode-se assumir que existe algum outlier e em uma primeira visualização, existe uma indicação de que as médias estão normais. Agora, outros testes necessitam ser realizados para análise dos dados.</p>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-3_16b56143a57e83c8dfd8c3648b0e6977">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>img1 <span class="ot">&lt;-</span> prod <span class="sc">|&gt;</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(trat, prod_ha))<span class="sc">+</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">color =</span> <span class="st">"gray"</span>) <span class="sc">+</span> </span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun.data =</span> <span class="st">"mean_cl_boot"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="fl">0.5</span>)<span class="sc">+</span> </span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span> ( <span class="at">x =</span> <span class="st">"Tratamento"</span>,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">"Produtividade (Kg/Ha)"</span>) <span class="sc">+</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">13000</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>img1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="FIP606_ANA_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<p>##Sumarizar os dados</p>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-4_98f89e51cd5a2177b1a738acc15e9421">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>prod <span class="sc">|&gt;</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trat) <span class="sc">|&gt;</span> </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_prod_ha =</span> <span class="fu">mean</span>(prod_ha),</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_prod_ha =</span> <span class="fu">sd</span>(prod_ha),</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_prod_ha =</span> <span class="fu">var</span>(prod_ha))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 4
-  trat  mean_prod_ha sd_prod_ha var_prod_ha
-  &lt;fct&gt;        &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;
-1 1           10283.      2017.    4068199.
-2 2           10599.      1268.    1606605.
-3 3           10840.       527.     277859.
-4 4           10560.       593.     351744.
-5 5           10755.       635.     403504.</code></pre>
-</div>
-</div>
-</section>
-<section id="testar-as-premissas" class="level2">
-<h2 class="anchored" data-anchor-id="testar-as-premissas">Testar as premissas</h2>
-<p>Antes de utilizar qualquer teste para comparação de médias, é necessário testar se o conjunto de dados respeitam as premissas para então iniciar os testes de comparação de médias. Podemos usar várias opções, as que são utilizadas abaixo são os testes de shapiro wilk (para normalidade), o teste de bartlett (para homogeneidade). Da mesma forma, também pode ser utilizado as funções do pacote performance, que utiliza outros testes para averiguar a normalidade e homogeineidade dos dados. Portanto, a partir dos testes utilizados é possível afirmar que os dados seguem uma distribuição normal e homogênea. Dessa forma, o conjunto de dados respeita as premissas para a utilização do modelo e da ANOVA, portanto, as análises podem seguir normalmente.</p>
-<section id="anova" class="level3">
-<h3 class="anchored" data-anchor-id="anova">ANOVA</h3>
-<p>Para verificar a diferença ou não entre as médias, será utilizada a ANOVA que servirá para identificar variabilidade do conjunto de dados, dentro do grupo e entre os grupos, assim como irá avaliar a significância estatística das diferenças observadas entre as médias dos grupos. A partir da atribuição do conjuntos de dados ao modelo linear, a ANOVA foi calculada abaixo e a partir dela podemos inferir que o p-valor obtido foi superior a 5% para o tratamento e para o bloco, indicando que não há significância, ou seja, não há diferença entre as médias dos tratamentos uma vez que o p-valor foi maior que 0,05 de modo que rejeitamos a hipótese alternativa e aceita a hipótese nula.</p>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-5_f11c131f4c5cca1e9ca1a844c23f29c5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(prod<span class="sc">$</span>prod_ha)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="FIP606_ANA_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(prod<span class="sc">$</span>prod_ha)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Shapiro-Wilk normality test
-
-data:  prod$prod_ha
-W = 0.94909, p-value = 0.3535</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bartlett.test</span>(prod_ha <span class="sc">~</span>trat, <span class="at">data =</span> prod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Bartlett test of homogeneity of variances
-
-data:  prod_ha by trat
-Bartlett's K-squared = 7.4779, df = 4, p-value = 0.1127</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(prod_ha <span class="sc">~</span>trat <span class="sc">+</span> bloco, <span class="at">data =</span> prod)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DHARMa)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">simulateResiduals</span>(m1))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="FIP606_ANA_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid" width="672"></p>
-</div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(performance)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">check_normality</span>(m1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>OK: residuals appear as normally distributed (p = 0.783).</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check_heteroscedasticity</span>(m1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>OK: Error variance appears to be homoscedastic (p = 0.439).</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(m1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Analysis of Variance Table
-
-Response: prod_ha
-          Df   Sum Sq Mean Sq F value Pr(&gt;F)
-trat       4   733814  183453  0.1638 0.9527
-bloco      3  6682547 2227516  1.9887 0.1695
-Residuals 12 13441184 1120099               </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = prod_ha ~ trat + bloco, data = prod)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--1393.90  -586.55    67.56   465.23  1535.36 
-
-Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) 10527.97     669.36  15.728 2.26e-09 ***
-trat2         315.92     748.36   0.422   0.6804    
-trat3         556.83     748.36   0.744   0.4712    
-trat4         276.84     748.36   0.370   0.7179    
-trat5         472.25     748.36   0.631   0.5398    
-bloco2      -1233.40     669.36  -1.843   0.0902 .  
-bloco3        233.07     669.36   0.348   0.7337    
-bloco4         21.47     669.36   0.032   0.9749    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 1058 on 12 degrees of freedom
-Multiple R-squared:  0.3556,    Adjusted R-squared:  -0.02034 
-F-statistic: 0.9459 on 7 and 12 DF,  p-value: 0.5082</code></pre>
-</div>
-</div>
-</section>
-<section id="calculando-as-médias" class="level3">
-<h3 class="anchored" data-anchor-id="calculando-as-médias">Calculando as médias</h3>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-6_3ab35c637e21743000f97f533ceb97eb">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>medias_prod <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(m1, <span class="sc">~</span> trat)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>medias_prod</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> trat emmean  SE df lower.CL upper.CL
- 1     10283 529 12     9130    11436
- 2     10599 529 12     9446    11752
- 3     10840 529 12     9687    11993
- 4     10560 529 12     9407    11713
- 5     10755 529 12     9603    11908
-
-Results are averaged over the levels of: bloco 
-Confidence level used: 0.95 </code></pre>
-</div>
-</div>
-</section>
-<section id="atribuindo-diferença-ou-não-às-médias" class="level3">
-<h3 class="anchored" data-anchor-id="atribuindo-diferença-ou-não-às-médias">Atribuindo diferença ou não às médias</h3>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-7_9c12d98f3fab3b73d6e5e8033a6b9706">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cld</span>(medias_prod, <span class="at">Letters =</span> letters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> trat emmean  SE df lower.CL upper.CL .group
- 1     10283 529 12     9130    11436  a    
- 4     10560 529 12     9407    11713  a    
- 2     10599 529 12     9446    11752  a    
- 5     10755 529 12     9603    11908  a    
- 3     10840 529 12     9687    11993  a    
-
-Results are averaged over the levels of: bloco 
-Confidence level used: 0.95 
-P value adjustment: tukey method for comparing a family of 5 estimates 
-significance level used: alpha = 0.05 
-NOTE: If two or more means share the same grouping symbol,
-      then we cannot show them to be different.
-      But we also did not show them to be the same. </code></pre>
-</div>
-</div>
-<p>Como visto, não há diferença significativa entre as médias das produções.</p>
-<p>Teste termina acima.</p>
-<p>Abaixo temos apenas algumas outras etapas que podem ser realizadas.</p>
-</section>
-</section>
-<section id="parte-2---severidade" class="level2">
-<h2 class="anchored" data-anchor-id="parte-2---severidade">PARTE 2 - Severidade</h2>
+<section id="parte-01---severidade" class="level1">
+<h1>PARTE 01 - Severidade</h1>
 <p>Esse conjunto de dados é uma variável resposta categórica contínua, que se refere a severidade de manchas foliares causadas por diversos patógenos na cultura do milho. Foram avaliadas as severidades na parcela e nas folhas, para avaliação da severidade nas folhas foram analisadas 3 folhas em diferentes posições, acima da espiga, a da espiga e abaixo, realizando uma média das posições. Os tratamentos e os blocos foram transformados em fator para que o programa entenda que são categorias a serem separadas e não fatores númericos.</p>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-8_db0ace16c2c54e738e02d411f8b5ec54">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>sev <span class="ot">&lt;-</span> <span class="fu">gsheet2tbl</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1fkuSU5GJ0ucCVQw5DY3wNOtaiJZpSXnZBCWjruIUNQQ/edit#gid=756072264"</span>)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># sev$sev_parcela &lt;- as.numeric(sev$sev_parcela)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-2_4e262c02cd09d77a5d231965ca4db5c4">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sev <span class="ot">&lt;-</span> <span class="fu">gsheet2tbl</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1fkuSU5GJ0ucCVQw5DY3wNOtaiJZpSXnZBCWjruIUNQQ/edit#gid=756072264"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># sev$sev_parcela &lt;- as.numeric(sev$sev_parcela)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-9_7e56671e272dbf3a9bb9c7ece7bdc8d8">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>sev2 <span class="ot">&lt;-</span> sev <span class="sc">|&gt;</span> </span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">trat =</span> <span class="fu">as.factor</span>(trat),</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">bloco =</span> <span class="fu">as.factor</span>(bloco),</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">data_av =</span> <span class="fu">as.Date</span>(data_av))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-3_2dc37eda2d9dd133d71f7131fbf0ffaa">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sev2 <span class="ot">&lt;-</span> sev <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">trat =</span> <span class="fu">as.factor</span>(trat),</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">bloco =</span> <span class="fu">as.factor</span>(bloco),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">data_av =</span> <span class="fu">as.Date</span>(data_av))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
 <section id="severidade-na-parcela" class="level2">
 <h2 class="anchored" data-anchor-id="severidade-na-parcela"><strong>Severidade na parcela</strong></h2>
 <section id="curva-de-progresso-da-doença" class="level3">
 <h3 class="anchored" data-anchor-id="curva-de-progresso-da-doença">Curva de progresso da doença</h3>
 <p>Abaixo foi realizado a curva de progresso da doença considerando a média da severidade da parcela. Para cada tratamento, foi estabelecido os desvios padrão que mede o quanto os valores do conjuto de dados se desviam da média do conjunto. Foram feitas 4 avaliações, nos dias 15/01, 22/01, 09/02 e 21/02 do ano de 2024. A partir do gráfico plotado, observa-se um aumento da severidade da doença em relação ao tempo, em que houve uma maior inflexão da curva a partir da terceira avaliação atingindo o seu ponto máximo na quarta avaliação.</p>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-10_1117c8c07ed2314bd27f3f6e5cdb9ee3">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>sev2 <span class="sc">|&gt;</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trat, data_av) <span class="sc">|&gt;</span> </span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_sev =</span> <span class="fu">mean</span>(sev_parcela),</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">sevpar_se =</span> (<span class="fu">sd</span>(sev_parcela)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">4</span>))) <span class="sc">|&gt;</span> </span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(data_av, mean_sev, <span class="at">color =</span> trat))<span class="sc">+</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>trat) <span class="sc">+</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_sev <span class="sc">-</span> sevpar_se,</span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> mean_sev <span class="sc">+</span> sevpar_se),</span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.1</span>)<span class="sc">+</span></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-01-15"</span>),</span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
-<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>), </span>
-<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
-<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
-<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-01-22"</span>),</span>
-<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
-<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>),</span>
-<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
-<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
-<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-02-09"</span>),</span>
-<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
-<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>), </span>
-<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
-<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
-<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-02-21"</span>),</span>
-<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
-<span id="cb26-30"><a href="#cb26-30" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>),</span>
-<span id="cb26-31"><a href="#cb26-31" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
-<span id="cb26-32"><a href="#cb26-32" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb26-33"><a href="#cb26-33" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
-<span id="cb26-34"><a href="#cb26-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"black"</span>)<span class="sc">+</span></span>
-<span id="cb26-35"><a href="#cb26-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
-<span id="cb26-36"><a href="#cb26-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Severidade na parcela"</span>,</span>
-<span id="cb26-37"><a href="#cb26-37" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Avaliações"</span>, </span>
-<span id="cb26-38"><a href="#cb26-38" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Severidade"</span>)<span class="sc">+</span></span>
-<span id="cb26-39"><a href="#cb26-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">breaks =</span> <span class="fu">as.Date</span>( <span class="fu">c</span>(<span class="st">"2024-01-15"</span>,</span>
-<span id="cb26-40"><a href="#cb26-40" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"2024-01-22"</span>,</span>
-<span id="cb26-41"><a href="#cb26-41" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"2024-02-09"</span>,</span>
-<span id="cb26-42"><a href="#cb26-42" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"2024-02-21"</span>))) <span class="sc">+</span>                                   </span>
-<span id="cb26-43"><a href="#cb26-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.title.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-4_20710c3088089b9ff11ebd97634dbd0f">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sev2 <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trat, data_av) <span class="sc">|&gt;</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_sev =</span> <span class="fu">mean</span>(sev_parcela),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">sevpar_se =</span> (<span class="fu">sd</span>(sev_parcela)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">4</span>))) <span class="sc">|&gt;</span> </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(data_av, mean_sev, <span class="at">color =</span> trat))<span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>trat) <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_sev <span class="sc">-</span> sevpar_se,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> mean_sev <span class="sc">+</span> sevpar_se),</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.1</span>)<span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-01-15"</span>),</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>), </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-01-22"</span>),</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>),</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-02-09"</span>),</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>), </span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-02-21"</span>),</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>),</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"black"</span>)<span class="sc">+</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Severidade na parcela"</span>,</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Avaliações"</span>, </span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Severidade"</span>)<span class="sc">+</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">breaks =</span> <span class="fu">as.Date</span>( <span class="fu">c</span>(<span class="st">"2024-01-15"</span>,</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"2024-01-22"</span>,</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"2024-02-09"</span>,</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"2024-02-21"</span>))) <span class="sc">+</span>                                   </span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.title.position =</span> <span class="st">"bottom"</span>)<span class="sc">+</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="FIP606_ANA_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+<p><img src="FIP606_ANA_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-11_22818e7451d7eb025af251d8a9e8e82b">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>sev2 <span class="sc">|&gt;</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trat, data_av) <span class="sc">|&gt;</span> </span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_sev =</span> <span class="fu">mean</span>(sev_parcela),</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">sevpar_se =</span> (<span class="fu">sd</span>(sev_parcela)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">4</span>))) <span class="sc">|&gt;</span> </span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(data_av, mean_sev, <span class="at">color =</span> trat))<span class="sc">+</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_sev <span class="sc">-</span> sevpar_se,</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> mean_sev <span class="sc">+</span> sevpar_se),</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.1</span>)<span class="sc">+</span></span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-01-15"</span>),</span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>), </span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
-<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-01-22"</span>),</span>
-<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
-<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>),</span>
-<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
-<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
-<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-02-09"</span>),</span>
-<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
-<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>), </span>
-<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
-<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
-<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-02-21"</span>),</span>
-<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
-<span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>),</span>
-<span id="cb27-30"><a href="#cb27-30" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
-<span id="cb27-31"><a href="#cb27-31" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb27-32"><a href="#cb27-32" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
-<span id="cb27-33"><a href="#cb27-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"black"</span>)<span class="sc">+</span></span>
-<span id="cb27-34"><a href="#cb27-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
-<span id="cb27-35"><a href="#cb27-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Severidade na parcela"</span>,</span>
-<span id="cb27-36"><a href="#cb27-36" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Avaliações"</span>, </span>
-<span id="cb27-37"><a href="#cb27-37" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Severidade"</span>)<span class="sc">+</span></span>
-<span id="cb27-38"><a href="#cb27-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">breaks =</span> <span class="fu">as.Date</span>( <span class="fu">c</span>(<span class="st">"2024-01-15"</span>,</span>
-<span id="cb27-39"><a href="#cb27-39" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"2024-01-22"</span>,</span>
-<span id="cb27-40"><a href="#cb27-40" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"2024-02-09"</span>,</span>
-<span id="cb27-41"><a href="#cb27-41" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"2024-02-21"</span>))) <span class="sc">+</span>                                   </span>
-<span id="cb27-42"><a href="#cb27-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.title.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-5_1c85e7b464c81b38be81bc8b18712dfe">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sev2 <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trat, data_av) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_sev =</span> <span class="fu">mean</span>(sev_parcela),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">sevpar_se =</span> (<span class="fu">sd</span>(sev_parcela)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">4</span>))) <span class="sc">|&gt;</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(data_av, mean_sev, <span class="at">color =</span> trat))<span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_sev <span class="sc">-</span> sevpar_se,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> mean_sev <span class="sc">+</span> sevpar_se),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.1</span>)<span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-01-15"</span>),</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>), </span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-01-22"</span>),</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>),</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-02-09"</span>),</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>), </span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-02-21"</span>),</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>),</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"black"</span>)<span class="sc">+</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Severidade na parcela"</span>,</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Avaliações"</span>, </span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Severidade"</span>)<span class="sc">+</span></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">breaks =</span> <span class="fu">as.Date</span>( <span class="fu">c</span>(<span class="st">"2024-01-15"</span>,</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"2024-01-22"</span>,</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"2024-02-09"</span>,</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"2024-02-21"</span>))) <span class="sc">+</span>                                   </span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.title.position =</span> <span class="st">"bottom"</span>)<span class="sc">+</span></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="FIP606_ANA_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+<p><img src="FIP606_ANA_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
-<section id="calcular-área-abaixo-da-curva" class="level3">
-<h3 class="anchored" data-anchor-id="calcular-área-abaixo-da-curva">Calcular área abaixo da curva</h3>
+<section id="área-abaixo-da-curva---parcela" class="level3">
+<h3 class="anchored" data-anchor-id="área-abaixo-da-curva---parcela">Área abaixo da curva - parcela</h3>
 <p>O cálculo da área abaixo da curva da progressão de uma doença foi usado para quantificar e comparar a evolução manchas foliares ao longo do tempo, sendo utilizado para avaliar os tratamentos aplicados, entender a dinâmica das doenças e como os tratamentos influenciam no progresso da doença.</p>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-12_2b82ca963f050d65b50c12df80c9ef76">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>curva_par <span class="ot">&lt;-</span> sev2 <span class="sc">|&gt;</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trat, bloco) <span class="sc">|&gt;</span> </span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">aacpd =</span> <span class="fu">AUDPC</span>(ava, sev_parcela))</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>curva_par</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-6_c6bde9daad61e864ca084fdcf0926a00">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>curva_par <span class="ot">&lt;-</span> sev2 <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trat, bloco) <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">aacpd =</span> <span class="fu">AUDPC</span>(ava, sev_parcela))</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>curva_par</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 20 × 3
 # Groups:   trat [5]
@@ -549,19 +391,19 @@ NOTE: If two or more means share the same grouping symbol,
 <section id="testes-de-premissas-e-anova" class="level3">
 <h3 class="anchored" data-anchor-id="testes-de-premissas-e-anova">Testes de premissas e ANOVA</h3>
 <p>Foi atribuido um modelo linear às curvas de progresso e após isso foi feita a análise de variância (ANOVA) para calcular as possíveis diferenças. A partir da ANOVA, é possível afirmar que houve diferença estatística entre as médias e que os tratamentos e os blocos tiveram influência na severidade, uma vez que o p-valor dos tratamentos foi de 0,025 e o do bloco foi de 0,009, sendo assim aceita a hipótese alternativa e rejeita a hipótese nula, admitindo que há diferença entre as médias.</p>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-13_2b4309f01c564ad509413805b83e3a8e">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>m_curva_par <span class="ot">&lt;-</span><span class="fu">lm</span>(aacpd <span class="sc">~</span> trat <span class="sc">+</span> <span class="fu">factor</span>(bloco),</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> curva_par)</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">check_heteroscedasticity</span>(m_curva_par)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-7_2f43e2b0b09a196bdc1bb252ae417bf3">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>m_curva_par <span class="ot">&lt;-</span><span class="fu">lm</span>(aacpd <span class="sc">~</span> trat <span class="sc">+</span> <span class="fu">factor</span>(bloco),</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> curva_par)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">check_heteroscedasticity</span>(m_curva_par)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>OK: Error variance appears to be homoscedastic (p = 0.338).</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check_normality</span>(m_curva_par)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check_normality</span>(m_curva_par)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>OK: residuals appear as normally distributed (p = 0.901).</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(m_curva_par)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(m_curva_par)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Analysis of Variance Table
 
@@ -575,9 +417,9 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
 <p>Uma vez que a análise de variância indicou que existe pelo menos uma média que difere das outras, surge a necessidade de aplicar um teste de médias para separar as médias em um ou mais grupos e verificar se mais de um tratamento difere do outro estatisticamente. Com o uso do emmeas e da função “cld” podemos separar as médias e agrupá-las conforme a sua diferença estatística. Portanto, é possível afirmar que o tratamento 3 diferiu estatisticamente do tratamento 5 e apresentou o menor valor de severidade entre as médias calculadas, porém, não apresentou diferença estatística com relação aos tratamentos 1, 2 e 4.</p>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-14_ec2621115f2179155dd904e788864913">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>medias_m_curva_par <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(m_curva_par, <span class="sc">~</span> trat)</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>medias_m_curva_par</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-8_bfa4c487f12dd703b2676e113222cf60">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>medias_m_curva_par <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(m_curva_par, <span class="sc">~</span> trat)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>medias_m_curva_par</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> trat emmean    SE df lower.CL upper.CL
  1      1.88 0.181 12     1.48     2.27
@@ -589,7 +431,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 Results are averaged over the levels of: bloco 
 Confidence level used: 0.95 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cld</span>(medias_m_curva_par, <span class="at">Letters =</span> letters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cld</span>(medias_m_curva_par, <span class="at">Letters =</span> letters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> trat emmean    SE df lower.CL upper.CL .group
  3      1.44 0.181 12     1.04     1.83  a    
@@ -606,16 +448,16 @@ NOTE: If two or more means share the same grouping symbol,
       then we cannot show them to be different.
       But we also did not show them to be the same. </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cv.model</span>(m_curva_par)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cv.model</span>(m_curva_par)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 19.56584</code></pre>
 </div>
 </div>
 <p>Foi criada outra tabela para filtrar os valores da avaliação 4, visto que a maior severidade (Ymax) foi observado na última avaliação. De modo semelhante aos processos anteriores, atribuiu-se o objeto <code>ymax</code> a um modelo linear, testou-se as premissas e realizou-se a analise de variância. Os resultados mostraram normalidade e heterocedasticidade do conjunto de dados. Já a análise de variância indicou um P-valor de 0,043, indicando que pelo menos uma média difere das outras. Entretanto, quando realizado o teste de médias de Tukey, este indicou que não havia diferença estatística entre as médias. (<strong>explicar a matemática por trás do teste</strong>) Como o teste usado é muito rigoroso (dms alta), ele não conseguiu separar as médias em grupos diferentes. Desta forma, foi utilizado um teste estatístico menos rigoroso (LSD), que conseguiu separar as médias em 3 grupos distintos. Conforme observado no teste, é possível afirmar que os tratamentos 1 e 3 diferiram entre si apresentando, porém não houve diferença estatística entre os tratamentos 2, 4 e 5, como é possível observar no gráfico plotado.</p>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-15_2aec46cc797ad324ed5730dcdd7d3881">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>sev3 <span class="ot">&lt;-</span> sev2 <span class="sc">|&gt;</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ava <span class="sc">==</span> <span class="dv">4</span>)</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>sev3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-9_6b36e2966a2956a825feb5c51219c66e">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>sev3 <span class="ot">&lt;-</span> sev2 <span class="sc">|&gt;</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ava <span class="sc">==</span> <span class="dv">4</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>sev3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 20 × 8
    parcela trat  bloco hib    data_av      ava sev_parcela sev_med_pl
@@ -641,9 +483,9 @@ NOTE: If two or more means share the same grouping symbol,
 19 V311    5     3     BM 990 2024-02-21     4         2.9       1.89
 20 V411    5     4     BM 990 2024-02-21     4         2.5       0.63</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>ymax <span class="ot">&lt;-</span> <span class="fu">lm</span>(sev_parcela <span class="sc">~</span> trat <span class="sc">+</span> <span class="fu">factor</span>(bloco),</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> sev3)</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>ymax</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>ymax <span class="ot">&lt;-</span> <span class="fu">lm</span>(sev_parcela <span class="sc">~</span> trat <span class="sc">+</span> <span class="fu">factor</span>(bloco),</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> sev3)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>ymax</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -655,15 +497,15 @@ Coefficients:
 factor(bloco)2  factor(bloco)3  factor(bloco)4  
          1.960           1.760           0.560  </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check_normality</span>(ymax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check_normality</span>(ymax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>OK: residuals appear as normally distributed (p = 0.797).</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check_heteroscedasticity</span>(ymax) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check_heteroscedasticity</span>(ymax) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>OK: Error variance appears to be homoscedastic (p = 0.219).</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(ymax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(ymax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Analysis of Variance Table
 
@@ -675,8 +517,8 @@ Residuals     12  3.619  0.3016
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>medias_ymax <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(ymax, <span class="sc">~</span> bloco)</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>medias_ymax</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>medias_ymax <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(ymax, <span class="sc">~</span> bloco)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>medias_ymax</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> bloco emmean    SE df lower.CL upper.CL
  1       0.94 0.246 12    0.405     1.48
@@ -687,7 +529,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 Results are averaged over the levels of: trat 
 Confidence level used: 0.95 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cld</span>(medias_ymax, <span class="at">Letters =</span> letters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cld</span>(medias_ymax, <span class="at">Letters =</span> letters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> bloco emmean    SE df lower.CL upper.CL .group
  1       0.94 0.246 12    0.405     1.48  a    
@@ -703,9 +545,9 @@ NOTE: If two or more means share the same grouping symbol,
       then we cannot show them to be different.
       But we also did not show them to be the same. </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">aov</span>(sev_parcela <span class="sc">~</span> trat, <span class="at">data =</span> sev3)</span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>snk_test <span class="ot">&lt;-</span> <span class="fu">SNK.test</span>(model, <span class="st">"trat"</span>, <span class="at">group =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(snk_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">aov</span>(sev_parcela <span class="sc">~</span> trat, <span class="at">data =</span> sev3)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>snk_test <span class="ot">&lt;-</span> <span class="fu">SNK.test</span>(model, <span class="st">"trat"</span>, <span class="at">group =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(snk_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$statistics
    MSerror Df Mean       CV
@@ -744,8 +586,8 @@ $groups
 attr(,"class")
 [1] "group"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>tukey_contrast <span class="ot">&lt;-</span> <span class="fu">contrast</span>(medias_ymax, <span class="at">method =</span> <span class="st">"tukey"</span>)</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(tukey_contrast)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>tukey_contrast <span class="ot">&lt;-</span> <span class="fu">contrast</span>(medias_ymax, <span class="at">method =</span> <span class="st">"tukey"</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(tukey_contrast)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> contrast        estimate    SE df t.ratio p.value
  bloco1 - bloco2    -1.96 0.347 12  -5.643  0.0005
@@ -758,7 +600,7 @@ attr(,"class")
 Results are averaged over the levels of: trat 
 P value adjustment: tukey method for comparing a family of 4 estimates </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbc</span>(<span class="at">trat =</span> sev3<span class="sc">$</span>trat, <span class="at">bloco =</span> sev3<span class="sc">$</span>bloco, <span class="at">resp =</span> sev3<span class="sc">$</span>sev_parcela, <span class="at">mcomp =</span> <span class="st">"lsd"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbc</span>(<span class="at">trat =</span> sev3<span class="sc">$</span>trat, <span class="at">bloco =</span> sev3<span class="sc">$</span>bloco, <span class="at">resp =</span> sev3<span class="sc">$</span>sev_parcela, <span class="at">mcomp =</span> <span class="st">"lsd"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>------------------------------------------------------------------------
 Quadro da analise de variancia
@@ -793,94 +635,102 @@ abc      4   1.825
   c      3   1.4 
 ------------------------------------------------------------------------</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>sev3 <span class="sc">|&gt;</span></span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trat, sev_parcela) <span class="sc">|&gt;</span> </span>
-<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_sev =</span> <span class="fu">mean</span>(sev_parcela)) <span class="sc">|&gt;</span> </span>
-<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(trat, mean_sev)) <span class="sc">+</span></span>
-<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">color =</span> <span class="st">"gray"</span>)<span class="sc">+</span></span>
-<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun.data =</span> <span class="st">"mean_cl_boot"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
-<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span> (<span class="at">x =</span> <span class="st">"Tratamentos"</span>,</span>
-<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span> <span class="st">"Severidade média"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>sev3 <span class="sc">|&gt;</span> <span class="fu">group_by</span>(trat) <span class="sc">|&gt;</span> </span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">sevpar_mean =</span> <span class="fu">mean</span>(sev_parcela),</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sevpar_se =</span> (<span class="fu">sd</span>(sev_parcela)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">4</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">factor</span>(trat), sevpar_mean, <span class="at">color =</span> trat)) <span class="sc">+</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> sevpar_mean <span class="sc">-</span> sevpar_se,</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> sevpar_mean <span class="sc">+</span> sevpar_se),</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Tratamentos"</span>,</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Severidade média da parcela"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="FIP606_ANA_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
-</div>
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>sev3 <span class="sc">|&gt;</span> <span class="fu">group_by</span>(trat) <span class="sc">|&gt;</span> </span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">sevpar_mean =</span> <span class="fu">mean</span>(sev_parcela),</span>
-<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sevpar_se =</span> (<span class="fu">sd</span>(sev_parcela)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">4</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">factor</span>(trat), sevpar_mean, <span class="at">color =</span> trat)) <span class="sc">+</span></span>
-<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> sevpar_mean <span class="sc">-</span> sevpar_se,</span>
-<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> sevpar_mean <span class="sc">+</span> sevpar_se),</span>
-<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
-<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Tratamentos"</span>,</span>
-<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Severidade média da parcela"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="FIP606_ANA_files/figure-html/unnamed-chunk-15-2.png" class="img-fluid" width="672"></p>
+<p><img src="FIP606_ANA_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
-<section id="severidade-médias-nas-plantas" class="level3">
-<h3 class="anchored" data-anchor-id="severidade-médias-nas-plantas">Severidade médias nas plantas</h3>
+<section id="eficácia-de-controle" class="level3">
+<h3 class="anchored" data-anchor-id="eficácia-de-controle">Eficácia de controle</h3>
+<p>A eficácia de controle mostra o quanto o tratamento foi eficiente em comparação com o tratamento controle.</p>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-10_e83bf309459a1ec25f4d392527f2d544">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>sev3 <span class="sc">|&gt;</span> <span class="fu">group_by</span>(trat) <span class="sc">|&gt;</span> </span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">sevpar_mean =</span> <span class="fu">mean</span>(sev_parcela),</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sevpar_se =</span> (<span class="fu">sd</span>(sev_parcela)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">4</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">control =</span> <span class="dv">1</span><span class="sc">-</span> sevpar_mean<span class="sc">/</span><span class="fl">2.475</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+  trat  sevpar_mean sevpar_se control
+  &lt;fct&gt;       &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+1 1            2.6      0.782 -0.0505
+2 2            1.75     0.433  0.293 
+3 3            1.4      0.389  0.434 
+4 4            1.82     0.589  0.263 
+5 5            2.48     0.342  0     </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="severidade-médias-nas-plantas" class="level2">
+<h2 class="anchored" data-anchor-id="severidade-médias-nas-plantas">Severidade médias nas plantas</h2>
 <p>Foram avaliadas as severidades na parcela e nas folhas, para avaliação da severidade nas folhas foram analisadas 3 folhas em diferentes posições, acima da espiga, a da espiga e abaixo, realizando uma média das posições das folhas.</p>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-16_9046ae43e7f4c682c4d74bc1dc505109">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>sev2 <span class="sc">|&gt;</span></span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trat, data_av) <span class="sc">|&gt;</span> </span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_sevpl =</span> <span class="fu">mean</span>(sev_med_pl),</span>
-<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">sevmed_se =</span> (<span class="fu">sd</span>(sev_med_pl)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">4</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(data_av, mean_sevpl, <span class="at">color =</span> trat))<span class="sc">+</span></span>
-<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#facet_wrap(~trat) +</span></span>
-<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_sevpl <span class="sc">-</span> sevmed_se,</span>
-<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> mean_sevpl <span class="sc">+</span> sevmed_se),</span>
-<span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.1</span>)<span class="sc">+</span></span>
-<span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-01-15"</span>),</span>
-<span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
-<span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>), </span>
-<span id="cb64-13"><a href="#cb64-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
-<span id="cb64-14"><a href="#cb64-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb64-15"><a href="#cb64-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
-<span id="cb64-16"><a href="#cb64-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-01-22"</span>),</span>
-<span id="cb64-17"><a href="#cb64-17" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
-<span id="cb64-18"><a href="#cb64-18" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>),</span>
-<span id="cb64-19"><a href="#cb64-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
-<span id="cb64-20"><a href="#cb64-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb64-21"><a href="#cb64-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
-<span id="cb64-22"><a href="#cb64-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-02-09"</span>),</span>
-<span id="cb64-23"><a href="#cb64-23" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
-<span id="cb64-24"><a href="#cb64-24" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>), </span>
-<span id="cb64-25"><a href="#cb64-25" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
-<span id="cb64-26"><a href="#cb64-26" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb64-27"><a href="#cb64-27" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
-<span id="cb64-28"><a href="#cb64-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-02-21"</span>),</span>
-<span id="cb64-29"><a href="#cb64-29" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
-<span id="cb64-30"><a href="#cb64-30" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>),</span>
-<span id="cb64-31"><a href="#cb64-31" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
-<span id="cb64-32"><a href="#cb64-32" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb64-33"><a href="#cb64-33" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
-<span id="cb64-34"><a href="#cb64-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"black"</span>)<span class="sc">+</span></span>
-<span id="cb64-35"><a href="#cb64-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
-<span id="cb64-36"><a href="#cb64-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Severidade na planta"</span>,</span>
-<span id="cb64-37"><a href="#cb64-37" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Avaliações"</span>, </span>
-<span id="cb64-38"><a href="#cb64-38" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Severidade"</span>)<span class="sc">+</span></span>
-<span id="cb64-39"><a href="#cb64-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">breaks =</span> <span class="fu">as.Date</span>( <span class="fu">c</span>(<span class="st">"2024-01-15"</span>,</span>
-<span id="cb64-40"><a href="#cb64-40" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"2024-01-22"</span>,</span>
-<span id="cb64-41"><a href="#cb64-41" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"2024-02-09"</span>,</span>
-<span id="cb64-42"><a href="#cb64-42" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"2024-02-21"</span>))) <span class="sc">+</span>                                   </span>
-<span id="cb64-43"><a href="#cb64-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.title.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-11_d5aadcd73edb1bb62a5e03c911e3895c">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>sev2 <span class="sc">|&gt;</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trat, data_av) <span class="sc">|&gt;</span> </span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_sevpl =</span> <span class="fu">mean</span>(sev_med_pl),</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">sevmed_se =</span> (<span class="fu">sd</span>(sev_med_pl)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">4</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(data_av, mean_sevpl, <span class="at">color =</span> trat))<span class="sc">+</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#facet_wrap(~trat) +</span></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_sevpl <span class="sc">-</span> sevmed_se,</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> mean_sevpl <span class="sc">+</span> sevmed_se),</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.1</span>)<span class="sc">+</span></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-01-15"</span>),</span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>), </span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-01-22"</span>),</span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>),</span>
+<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
+<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
+<span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-02-09"</span>),</span>
+<span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
+<span id="cb43-24"><a href="#cb43-24" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>), </span>
+<span id="cb43-25"><a href="#cb43-25" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
+<span id="cb43-26"><a href="#cb43-26" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb43-27"><a href="#cb43-27" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
+<span id="cb43-28"><a href="#cb43-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2024-02-21"</span>),</span>
+<span id="cb43-29"><a href="#cb43-29" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">3</span>,</span>
+<span id="cb43-30"><a href="#cb43-30" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">""</span>),</span>
+<span id="cb43-31"><a href="#cb43-31" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#262625"</span>,</span>
+<span id="cb43-32"><a href="#cb43-32" aria-hidden="true" tabindex="-1"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb43-33"><a href="#cb43-33" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
+<span id="cb43-34"><a href="#cb43-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"black"</span>)<span class="sc">+</span></span>
+<span id="cb43-35"><a href="#cb43-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb43-36"><a href="#cb43-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Severidade na planta"</span>,</span>
+<span id="cb43-37"><a href="#cb43-37" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Avaliações"</span>, </span>
+<span id="cb43-38"><a href="#cb43-38" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Severidade"</span>)<span class="sc">+</span></span>
+<span id="cb43-39"><a href="#cb43-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">breaks =</span> <span class="fu">as.Date</span>( <span class="fu">c</span>(<span class="st">"2024-01-15"</span>,</span>
+<span id="cb43-40"><a href="#cb43-40" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"2024-01-22"</span>,</span>
+<span id="cb43-41"><a href="#cb43-41" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"2024-02-09"</span>,</span>
+<span id="cb43-42"><a href="#cb43-42" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"2024-02-21"</span>))) <span class="sc">+</span></span>
+<span id="cb43-43"><a href="#cb43-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.title.position =</span> <span class="st">"bottom"</span>)<span class="sc">+</span></span>
+<span id="cb43-44"><a href="#cb43-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="FIP606_ANA_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+<p><img src="FIP606_ANA_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</section>
 <section id="área-abaixo-da-curva" class="level3">
 <h3 class="anchored" data-anchor-id="área-abaixo-da-curva">Área abaixo da curva</h3>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-17_3b6eb08cee7159800be566992a69e4d2">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>curva_pl <span class="ot">&lt;-</span> sev2 <span class="sc">|&gt;</span></span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trat, bloco) <span class="sc">|&gt;</span> </span>
-<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">aacpd =</span> <span class="fu">AUDPC</span>(ava, sev_med_pl))</span>
-<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>curva_pl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-12_524bb543dbe8edb467c0658b13ec15f5">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>curva_pl <span class="ot">&lt;-</span> sev2 <span class="sc">|&gt;</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trat, bloco) <span class="sc">|&gt;</span> </span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">aacpd =</span> <span class="fu">AUDPC</span>(ava, sev_med_pl))</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>curva_pl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 20 × 3
 # Groups:   trat [5]
@@ -909,21 +759,21 @@ abc      4   1.825
 </div>
 </div>
 </section>
-<section id="anova-1" class="level3">
-<h3 class="anchored" data-anchor-id="anova-1">ANOVA</h3>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-18_01cf61e746374cd9f8af90e38207b9a3">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>m_curva_pl <span class="ot">&lt;-</span><span class="fu">lm</span>(aacpd <span class="sc">~</span> trat <span class="sc">+</span> <span class="fu">factor</span>(bloco),</span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> curva_pl)</span>
-<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="fu">check_heteroscedasticity</span>(m_curva_pl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="anova" class="level3">
+<h3 class="anchored" data-anchor-id="anova">ANOVA</h3>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-13_c7f549f65e30cfb8335f6e77d9ea9460">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>m_curva_pl <span class="ot">&lt;-</span><span class="fu">lm</span>(aacpd <span class="sc">~</span> trat <span class="sc">+</span> <span class="fu">factor</span>(bloco),</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> curva_pl)</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="fu">check_heteroscedasticity</span>(m_curva_pl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Warning: Heteroscedasticity (non-constant error variance) detected (p = 0.005).</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check_normality</span>(m_curva_pl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check_normality</span>(m_curva_pl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>OK: residuals appear as normally distributed (p = 0.137).</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(m_curva_pl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(m_curva_pl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Analysis of Variance Table
 
@@ -934,16 +784,17 @@ factor(bloco)  3 0.60153 0.20051  1.8831 0.1863
 Residuals     12 1.27772 0.10648               </code></pre>
 </div>
 </div>
-<section id="conversão-01" class="level4">
-<h4 class="anchored" data-anchor-id="conversão-01">Conversão 01</h4>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-19_b6c54ac3785bb7b0ee39770aa9e60f8d">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>sev2<span class="sc">$</span>raiz_sev2 <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(sev2<span class="sc">$</span>sev_med_pl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Não atendeu a premissa de heterocedasticidade. Temos como opção realizar alguma conversão.</p>
+<section id="conversão-01---raiz-quadrada" class="level4">
+<h4 class="anchored" data-anchor-id="conversão-01---raiz-quadrada">Conversão 01 - raiz quadrada</h4>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-14_e2a1a921673e99bff236e1cf0887a000">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>sev2<span class="sc">$</span>raiz_sev2 <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(sev2<span class="sc">$</span>sev_med_pl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-20_bbf6d70df61189832ddb34c72ad4fe46">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>curva_pl_r <span class="ot">&lt;-</span> sev2 <span class="sc">|&gt;</span></span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trat, bloco) <span class="sc">|&gt;</span> </span>
-<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">aacpd =</span> <span class="fu">AUDPC</span>(ava, raiz_sev2))</span>
-<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a>curva_pl_r</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-15_d1056377c8b08fe1b51e1ce74e1cbd4c">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>curva_pl_r <span class="ot">&lt;-</span> sev2 <span class="sc">|&gt;</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trat, bloco) <span class="sc">|&gt;</span> </span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">aacpd =</span> <span class="fu">AUDPC</span>(ava, raiz_sev2))</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>curva_pl_r</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 20 × 3
 # Groups:   trat [5]
@@ -971,19 +822,19 @@ Residuals     12 1.27772 0.10648               </code></pre>
 20 5     4     1.34 </code></pre>
 </div>
 </div>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-21_bebccc397b1de89c62dcf1ec69ff5de4">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>m_curva_pl_r <span class="ot">&lt;-</span><span class="fu">lm</span>(aacpd <span class="sc">~</span> trat <span class="sc">+</span> <span class="fu">factor</span>(bloco),</span>
-<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> curva_pl_r)</span>
-<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a><span class="fu">check_heteroscedasticity</span>(m_curva_pl_r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-16_9a4cf215679e6a72414f9a3457a828bc">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>m_curva_pl_r <span class="ot">&lt;-</span><span class="fu">lm</span>(aacpd <span class="sc">~</span> trat <span class="sc">+</span> <span class="fu">factor</span>(bloco),</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> curva_pl_r)</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="fu">check_heteroscedasticity</span>(m_curva_pl_r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>OK: Error variance appears to be homoscedastic (p = 0.179).</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check_normality</span>(m_curva_pl_r) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check_normality</span>(m_curva_pl_r) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>OK: residuals appear as normally distributed (p = 0.202).</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(m_curva_pl_r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(m_curva_pl_r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Analysis of Variance Table
 
@@ -996,46 +847,13 @@ Residuals     12 0.99052 0.082543
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-22_d7e0319f5453efed4d9277fe28264bc9">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>medias_pl_r <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(m_curva_pl_r, <span class="sc">~</span> trat)</span>
-<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>medias_pl_r</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> trat emmean    SE df lower.CL upper.CL
- 1      1.24 0.144 12    0.924     1.55
- 2      1.16 0.144 12    0.844     1.47
- 3      1.07 0.144 12    0.756     1.38
- 4      1.11 0.144 12    0.802     1.43
- 5      1.55 0.144 12    1.234     1.86
-
-Results are averaged over the levels of: bloco 
-Confidence level used: 0.95 </code></pre>
-</div>
-</div>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-23_13188efec83c175fc1a7fadc2f32fb39">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cld</span>(medias_pl_r, <span class="at">Letters =</span> letters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> trat emmean    SE df lower.CL upper.CL .group
- 3      1.07 0.144 12    0.756     1.38  a    
- 4      1.11 0.144 12    0.802     1.43  a    
- 2      1.16 0.144 12    0.844     1.47  a    
- 1      1.24 0.144 12    0.924     1.55  a    
- 5      1.55 0.144 12    1.234     1.86  a    
-
-Results are averaged over the levels of: bloco 
-Confidence level used: 0.95 
-P value adjustment: tukey method for comparing a family of 5 estimates 
-significance level used: alpha = 0.05 
-NOTE: If two or more means share the same grouping symbol,
-      then we cannot show them to be different.
-      But we also did not show them to be the same. </code></pre>
-</div>
-</div>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-24_c1e41dfb67bff8e9e479b36a81c13f6c">
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>sev <span class="sc">|&gt;</span> </span>
-<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trat) <span class="sc">|&gt;</span> </span>
-<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">med_sev_par =</span> <span class="fu">mean</span>(sev_parcela),</span>
-<span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a>   <span class="at">sd_sev_par =</span> <span class="fu">sd</span>(sev_parcela),</span>
-<span id="cb86-5"><a href="#cb86-5" aria-hidden="true" tabindex="-1"></a>   <span class="at">var_sev_par =</span> <span class="fu">var</span>(sev_parcela))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Premissas atendidas: OK.</p>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-17_fd0297edaa81e4093f1d109b0bfdefee">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>sev <span class="sc">|&gt;</span> </span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trat) <span class="sc">|&gt;</span> </span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">med_sev_par =</span> <span class="fu">mean</span>(sev_parcela),</span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>   <span class="at">sd_sev_par =</span> <span class="fu">sd</span>(sev_parcela),</span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>   <span class="at">var_sev_par =</span> <span class="fu">var</span>(sev_parcela))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 4
    trat med_sev_par sd_sev_par var_sev_par
@@ -1047,14 +865,17 @@ NOTE: If two or more means share the same grouping symbol,
 5     5       0.944      1.04        1.07 </code></pre>
 </div>
 </div>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-25_2a64e965faf55954e1f0ba8d5718e7af">
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>sev3<span class="sc">$</span>raiz_sev2 <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(sev3<span class="sc">$</span>sev_med_pl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-18_cd2a7a17bed516f1a6ab0fd06bcdafc5">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>sev3<span class="sc">$</span>raiz_sev2 <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(sev3<span class="sc">$</span>sev_med_pl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>###Ymax nas plantas</p>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-26_10006b39fcfe83efbeaf700d6a9b3c21">
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>ymax_pl <span class="ot">&lt;-</span> <span class="fu">lm</span>(raiz_sev2 <span class="sc">~</span> trat <span class="sc">+</span> <span class="fu">factor</span>(bloco),</span>
-<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> sev3)</span>
-<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a>ymax_pl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ymax-nas-plantas" class="level3">
+<h3 class="anchored" data-anchor-id="ymax-nas-plantas">Ymax nas plantas</h3>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-19_ada200bfda3eb36febacdfe2d060015e">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>ymax_pl <span class="ot">&lt;-</span> <span class="fu">lm</span>(raiz_sev2 <span class="sc">~</span> trat <span class="sc">+</span> <span class="fu">factor</span>(bloco),</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> sev3)</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>ymax_pl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -1066,15 +887,15 @@ Coefficients:
 factor(bloco)2  factor(bloco)3  factor(bloco)4  
        0.30390         0.26648         0.05870  </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check_normality</span>(ymax_pl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check_normality</span>(ymax_pl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>OK: residuals appear as normally distributed (p = 0.689).</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check_heteroscedasticity</span>(ymax_pl) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check_heteroscedasticity</span>(ymax_pl) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>OK: Error variance appears to be homoscedastic (p = 0.291).</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(ymax_pl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(ymax_pl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Analysis of Variance Table
 
@@ -1086,8 +907,8 @@ Residuals     12 0.42117 0.035097
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>medias_ymax_pl <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(ymax_pl, <span class="sc">~</span> bloco)</span>
-<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a>medias_ymax_pl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>medias_ymax_pl <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(ymax_pl, <span class="sc">~</span> bloco)</span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>medias_ymax_pl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> bloco emmean     SE df lower.CL upper.CL
  1      0.645 0.0838 12    0.463    0.828
@@ -1098,7 +919,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 Results are averaged over the levels of: trat 
 Confidence level used: 0.95 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cld</span>(medias_ymax_pl, <span class="at">Letters =</span> letters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cld</span>(medias_ymax_pl, <span class="at">Letters =</span> letters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> bloco emmean     SE df lower.CL upper.CL .group
  1      0.645 0.0838 12    0.463    0.828  a    
@@ -1114,24 +935,202 @@ NOTE: If two or more means share the same grouping symbol,
       then we cannot show them to be different.
       But we also did not show them to be the same. </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a>sev3 <span class="sc">|&gt;</span> <span class="fu">group_by</span>(trat) <span class="sc">|&gt;</span> </span>
-<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mypl =</span> <span class="fu">mean</span>(raiz_sev2),</span>
-<span id="cb101-3"><a href="#cb101-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sypl =</span> (<span class="fu">sd</span>(raiz_sev2)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">4</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb101-4"><a href="#cb101-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">factor</span>(trat), mypl, <span class="at">color =</span> trat)) <span class="sc">+</span></span>
-<span id="cb101-5"><a href="#cb101-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb101-6"><a href="#cb101-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mypl <span class="sc">-</span> sypl,</span>
-<span id="cb101-7"><a href="#cb101-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> mypl <span class="sc">+</span> sypl),</span>
-<span id="cb101-8"><a href="#cb101-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
-<span id="cb101-9"><a href="#cb101-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb101-10"><a href="#cb101-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Tratamentos"</span>,</span>
-<span id="cb101-11"><a href="#cb101-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Severidade média das plantas"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>sev3 <span class="sc">|&gt;</span> <span class="fu">group_by</span>(trat) <span class="sc">|&gt;</span> </span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mypl =</span> <span class="fu">mean</span>(raiz_sev2),</span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sypl =</span> (<span class="fu">sd</span>(raiz_sev2)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">4</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">factor</span>(trat), mypl, <span class="at">color =</span> trat)) <span class="sc">+</span></span>
+<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mypl <span class="sc">-</span> sypl,</span>
+<span id="cb76-7"><a href="#cb76-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> mypl <span class="sc">+</span> sypl),</span>
+<span id="cb76-8"><a href="#cb76-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb76-9"><a href="#cb76-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb76-10"><a href="#cb76-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Tratamentos"</span>,</span>
+<span id="cb76-11"><a href="#cb76-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Severidade média das plantas"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="FIP606_ANA_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid" width="672"></p>
+<p><img src="FIP606_ANA_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-
-
 </section>
+</section>
+</section>
+<section id="parte-02---produtividade" class="level1">
+<h1>PARTE 02 - Produtividade</h1>
+<p>Os dados são obtidos a partir de um experimento que visa analisar a interferência de diferentes fungicidas (nativo e bio ferti (fertlizante de silicato de potássio, como indutor de resistência)) e as diferentes ordens em que eles são aplicados sob a severidade das doenças de manchas foliares causadas por patogénos como: Stenocarpella sp., Diplodia sp., Bipolaris maydis e Bipolaris zeicola, Helmintosporiose sp. e entre outros agentes causais. É um experimento com delineamento em blocos casualizados, em que eram 4 blocos e 5 tratamentos, totalizando 20 parcelas. Em que, os tratamentos eram: Fertilizante + Fungicida + Fungicia (T1), Fungicida + Fertilizante + Funcida (T2), Fertilizante + Fertilizante + Fertilizante (T3), Fungicida (T4) e a testemunha (T5). Para a produtividade foi obtido o número de espigas e o peso dos grãos de 15 espigas, esses valores foram calculados gerando o peso médio de cada espiga e a partir disso, foi estipulado para 1 hectare, a produtividade do experimento, obtendo então uma varíavel resposta númerica contínua.</p>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-20_53772b815331575151c4cffce1b5a894">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>prod <span class="ot">&lt;-</span> <span class="fu">gsheet2tbl</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1fkuSU5GJ0ucCVQw5DY3wNOtaiJZpSXnZBCWjruIUNQQ/edit#gid=0"</span>)</span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>prod <span class="ot">&lt;-</span> prod <span class="sc">|&gt;</span> </span>
+<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">trat =</span> <span class="fu">as.factor</span>(trat),</span>
+<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">bloco =</span> <span class="fu">as.factor</span>(bloco))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="visualização-dos-dados" class="level2">
+<h2 class="anchored" data-anchor-id="visualização-dos-dados">Visualização dos dados</h2>
+<p>Em um primeiro momento será realizada a análise dos dados de forma visual para buscar compreender a natureza dos dados e se eles seguem uma distribuição normal e uma homogeneidade das médias, também busca-se verificar se existe uma variação ou não nas médias apresentadas para então seguir com as análises estatísticas.A partir da visualização dos dados com o gráfico de boxplot e levando somente ele em consideração para a interpretação, podemos assumir que as médias estão próximas umas das outras e que existe pouca diferença entre os tratamentos, porém para o tratamento 1 pode-se assumir que existe algum outlier e em uma primeira visualização, existe uma indicação de que as médias estão normais. Agora, outros testes necessitam ser realizados para análise dos dados.</p>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-21_1ae7d8521ad59949171167807ca3007f">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>img1 <span class="ot">&lt;-</span> prod <span class="sc">|&gt;</span> </span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(trat, prod_ha))<span class="sc">+</span></span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">color =</span> <span class="st">"gray"</span>) <span class="sc">+</span> </span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun.data =</span> <span class="st">"mean_cl_boot"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="fl">0.5</span>)<span class="sc">+</span> </span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span> ( <span class="at">x =</span> <span class="st">"Tratamento"</span>,</span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">"Produtividade (Kg/Ha)"</span>) <span class="sc">+</span></span>
+<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">13000</span>)<span class="sc">+</span></span>
+<span id="cb78-9"><a href="#cb78-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb78-10"><a href="#cb78-10" aria-hidden="true" tabindex="-1"></a>img1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="FIP606_ANA_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="sumarizar-os-dados" class="level2">
+<h2 class="anchored" data-anchor-id="sumarizar-os-dados">Sumarizar os dados</h2>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-22_b3d84edc68eaca4644a6336bc9b4cf9c">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>prod <span class="sc">|&gt;</span> </span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(trat) <span class="sc">|&gt;</span> </span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_prod_ha =</span> <span class="fu">mean</span>(prod_ha),</span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_prod_ha =</span> <span class="fu">sd</span>(prod_ha),</span>
+<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_prod_ha =</span> <span class="fu">var</span>(prod_ha))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+  trat  mean_prod_ha sd_prod_ha var_prod_ha
+  &lt;fct&gt;        &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;
+1 1           10283.      2017.    4068199.
+2 2           10599.      1268.    1606605.
+3 3           10840.       527.     277859.
+4 4           10560.       593.     351744.
+5 5           10755.       635.     403504.</code></pre>
+</div>
+</div>
+</section>
+<section id="testar-as-premissas" class="level2">
+<h2 class="anchored" data-anchor-id="testar-as-premissas">Testar as premissas</h2>
+<p>Antes de utilizar qualquer teste para comparação de médias, é necessário testar se o conjunto de dados respeitam as premissas para então iniciar os testes de comparação de médias. Podemos usar várias opções, as que são utilizadas abaixo são os testes de shapiro wilk (para normalidade), o teste de bartlett (para homogeneidade). Da mesma forma, também pode ser utilizado as funções do pacote performance, que utiliza outros testes para averiguar a normalidade e homogeineidade dos dados. Portanto, a partir dos testes utilizados é possível afirmar que os dados seguem uma distribuição normal e homogênea. Dessa forma, o conjunto de dados respeita as premissas para a utilização do modelo e da ANOVA, portanto, as análises podem seguir normalmente.</p>
+<section id="anova-1" class="level3">
+<h3 class="anchored" data-anchor-id="anova-1">ANOVA</h3>
+<p>Para verificar a diferença ou não entre as médias, será utilizada a ANOVA que servirá para identificar variabilidade do conjunto de dados, dentro do grupo e entre os grupos, assim como irá avaliar a significância estatística das diferenças observadas entre as médias dos grupos. A partir da atribuição do conjuntos de dados ao modelo linear, a ANOVA foi calculada abaixo e a partir dela podemos inferir que o p-valor obtido foi superior a 5% para o tratamento e para o bloco, indicando que não há significância, ou seja, não há diferença entre as médias dos tratamentos uma vez que o p-valor foi maior que 0,05 de modo que rejeitamos a hipótese alternativa e aceita a hipótese nula.</p>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-23_46f3d14b03c70c06e3986d0d824ef535">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(prod<span class="sc">$</span>prod_ha)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="FIP606_ANA_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(prod<span class="sc">$</span>prod_ha)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  prod$prod_ha
+W = 0.94909, p-value = 0.3535</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bartlett.test</span>(prod_ha <span class="sc">~</span>trat, <span class="at">data =</span> prod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Bartlett test of homogeneity of variances
+
+data:  prod_ha by trat
+Bartlett's K-squared = 7.4779, df = 4, p-value = 0.1127</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(prod_ha <span class="sc">~</span>trat <span class="sc">+</span> bloco, <span class="at">data =</span> prod)</span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DHARMa)</span>
+<span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">simulateResiduals</span>(m1))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="FIP606_ANA_files/figure-html/unnamed-chunk-23-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(performance)</span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="fu">check_normality</span>(m1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>OK: residuals appear as normally distributed (p = 0.783).</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check_heteroscedasticity</span>(m1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>OK: Error variance appears to be homoscedastic (p = 0.439).</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(m1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Analysis of Variance Table
+
+Response: prod_ha
+          Df   Sum Sq Mean Sq F value Pr(&gt;F)
+trat       4   733814  183453  0.1638 0.9527
+bloco      3  6682547 2227516  1.9887 0.1695
+Residuals 12 13441184 1120099               </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = prod_ha ~ trat + bloco, data = prod)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1393.90  -586.55    67.56   465.23  1535.36 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 10527.97     669.36  15.728 2.26e-09 ***
+trat2         315.92     748.36   0.422   0.6804    
+trat3         556.83     748.36   0.744   0.4712    
+trat4         276.84     748.36   0.370   0.7179    
+trat5         472.25     748.36   0.631   0.5398    
+bloco2      -1233.40     669.36  -1.843   0.0902 .  
+bloco3        233.07     669.36   0.348   0.7337    
+bloco4         21.47     669.36   0.032   0.9749    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1058 on 12 degrees of freedom
+Multiple R-squared:  0.3556,    Adjusted R-squared:  -0.02034 
+F-statistic: 0.9459 on 7 and 12 DF,  p-value: 0.5082</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="correlação-ymax" class="level2">
+<h2 class="anchored" data-anchor-id="correlação-ymax">Correlação Ymax</h2>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-24_f20f860bfe0bd509ffff32f9deba8f8f">
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>correlacao <span class="ot">&lt;-</span> <span class="fu">gsheet2tbl</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1fkuSU5GJ0ucCVQw5DY3wNOtaiJZpSXnZBCWjruIUNQQ/edit#gid=1909308493"</span>)</span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a>plot1 <span class="ot">&lt;-</span> correlacao <span class="sc">|&gt;</span> </span>
+<span id="cb95-4"><a href="#cb95-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> ymax_par, <span class="at">y =</span> prod_ha))<span class="sc">+</span></span>
+<span id="cb95-5"><a href="#cb95-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb95-6"><a href="#cb95-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb95-7"><a href="#cb95-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span>
+<span id="cb95-8"><a href="#cb95-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-9"><a href="#cb95-9" aria-hidden="true" tabindex="-1"></a>plot2 <span class="ot">&lt;-</span> correlacao <span class="sc">|&gt;</span> </span>
+<span id="cb95-10"><a href="#cb95-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> ymax_pl, <span class="at">y =</span> prod_ha))<span class="sc">+</span></span>
+<span id="cb95-11"><a href="#cb95-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb95-12"><a href="#cb95-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb95-13"><a href="#cb95-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span>
+<span id="cb95-14"><a href="#cb95-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-15"><a href="#cb95-15" aria-hidden="true" tabindex="-1"></a>plot1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="FIP606_ANA_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>plot2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="FIP606_ANA_files/figure-html/unnamed-chunk-24-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="correlação-ymax-1" class="level2">
+<h2 class="anchored" data-anchor-id="correlação-ymax-1">Correlação Ymax</h2>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-25_519d14c32b4cfc29dbe1ca6597f7a3a1">
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>prod3 <span class="ot">&lt;-</span> correlacao <span class="sc">|&gt;</span> </span>
+<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(ymax_par, prod_ha, ymax_pl)</span>
+<span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb97-4"><a href="#cb97-4" aria-hidden="true" tabindex="-1"></a><span class="fu">corgraph</span>(prod3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Var1     Var2        cor          p
+2 prod_ha ymax_par -0.3175051 0.17253441
+3 ymax_pl ymax_par  0.7170089 0.00037408
+6 ymax_pl  prod_ha -0.3484439 0.13217008</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="FIP606_ANA_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+
+
 </section>
 </section>
 
