@@ -178,6 +178,8 @@ cld(medias_m_curva_par, Letters = letters)
 cv.model(m_curva_par)
 ```
 
+### Ymax - parcela
+
 Foi criada outra tabela para filtrar os valores da avaliação 4, visto que a maior severidade (Ymax) foi observado na última avaliação. De modo semelhante aos processos anteriores, atribuiu-se o objeto `ymax` a um modelo linear, testou-se as premissas e realizou-se a analise de variância. Os resultados mostraram normalidade e heterocedasticidade do conjunto de dados. Já a análise de variância indicou um P-valor de 0,043, indicando que pelo menos uma média difere das outras. Entretanto, quando realizado o teste de médias de Tukey, este indicou que não havia diferença estatística entre as médias. (**explicar a matemática por trás do teste**) Como o teste usado é muito rigoroso (dms alta), ele não conseguiu separar as médias em grupos diferentes. Desta forma, foi utilizado um teste estatístico menos rigoroso (LSD), que conseguiu separar as médias em 3 grupos distintos. Conforme observado no teste, é possível afirmar que os tratamentos 1 e 3 diferiram entre si apresentando, porém não houve diferença estatística entre os tratamentos 2, 4 e 5, como é possível observar no gráfico plotado.
 
 ```{r}
@@ -195,7 +197,7 @@ check_heteroscedasticity(ymax)
 anova(ymax)
 
 
-medias_ymax <- emmeans(ymax, ~ bloco)
+medias_ymax <- emmeans(ymax, ~ trat)
 medias_ymax
 
 cld(medias_ymax, Letters = letters)
@@ -233,7 +235,7 @@ sev3 |> group_by(trat) |>
   mutate(control = 1- sevpar_mean/2.475)
 ```
 
-## Severidade médias nas plantas
+## Severidade nas plantas
 
 Foram avaliadas as severidades na parcela e nas folhas, para avaliação da severidade nas folhas foram analisadas 3 folhas em diferentes posições, acima da espiga, a da espiga e abaixo, realizando uma média das posições das folhas.
 
@@ -302,8 +304,6 @@ m_curva_pl <-lm(aacpd ~ trat + factor(bloco),
 
 check_heteroscedasticity(m_curva_pl)
 check_normality(m_curva_pl)
-
-anova(m_curva_pl)
 ```
 
 Não atendeu a premissa de heterocedasticidade. Temos como opção realizar alguma conversão.
@@ -331,7 +331,7 @@ check_normality(m_curva_pl_r)
 anova(m_curva_pl_r)
 ```
 
-Premissas atendidas: OK.
+Não significativo.
 
 ```{r}
 sev |> 
