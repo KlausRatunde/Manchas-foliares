@@ -1,4 +1,0 @@
-"0","sev2 <- sev |> "
-"0","  mutate(trat = as.factor(trat),"
-"0","         bloco = as.factor(bloco),"
-"0","         data_av = as.Date(data_av))"

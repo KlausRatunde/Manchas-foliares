@@ -22,6 +22,7 @@ library(multcomp)
 library(agricolae)
 library(AgroR)
 library(corrplot)
+library(ggplot2)
 theme_set(theme_classic())
 ```
 
@@ -31,7 +32,6 @@ Esse conjunto de dados é uma variável resposta categórica contínua, que se r
 
 ```{r}
 sev <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1fkuSU5GJ0ucCVQw5DY3wNOtaiJZpSXnZBCWjruIUNQQ/edit#gid=756072264")
-# sev$sev_parcela <- as.numeric(sev$sev_parcela)
 ```
 
 ```{r}
@@ -358,7 +358,7 @@ check_heteroscedasticity(ymax_pl)
 anova(ymax_pl)
 
 
-medias_ymax_pl <- emmeans(ymax_pl, ~ bloco)
+medias_ymax_pl <- emmeans(ymax_pl, ~ trat)
 medias_ymax_pl
 
 cld(medias_ymax_pl, Letters = letters)

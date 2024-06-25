@@ -221,7 +221,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-1_29407af3749452600f5664f38c1057c8">
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-1_63b4f20fd0e0c7b28119a7c11c443d9b">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gsheet)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -235,14 +235,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(agricolae)</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(AgroR)</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_classic</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_classic</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="parte-01---severidade" class="level1">
 <h1>PARTE 01 - Severidade</h1>
 <p>Esse conjunto de dados é uma variável resposta categórica contínua, que se refere a severidade de manchas foliares causadas por diversos patógenos na cultura do milho. Foram avaliadas as severidades na parcela e nas folhas, para avaliação da severidade nas folhas foram analisadas 3 folhas em diferentes posições, acima da espiga, a da espiga e abaixo, realizando uma média das posições. Os tratamentos e os blocos foram transformados em fator para que o programa entenda que são categorias a serem separadas e não fatores númericos.</p>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-2_4e262c02cd09d77a5d231965ca4db5c4">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sev <span class="ot">&lt;-</span> <span class="fu">gsheet2tbl</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1fkuSU5GJ0ucCVQw5DY3wNOtaiJZpSXnZBCWjruIUNQQ/edit#gid=756072264"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># sev$sev_parcela &lt;- as.numeric(sev$sev_parcela)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-2_44cc72381617f93153a0a1ee24759c0a">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sev <span class="ot">&lt;-</span> <span class="fu">gsheet2tbl</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1fkuSU5GJ0ucCVQw5DY3wNOtaiJZpSXnZBCWjruIUNQQ/edit#gid=756072264"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-3_2dc37eda2d9dd133d71f7131fbf0ffaa">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sev2 <span class="ot">&lt;-</span> sev <span class="sc">|&gt;</span> </span>
@@ -872,7 +872,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </section>
 <section id="ymax-nas-plantas" class="level3">
 <h3 class="anchored" data-anchor-id="ymax-nas-plantas">Ymax nas plantas</h3>
-<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-19_ada200bfda3eb36febacdfe2d060015e">
+<div class="cell" data-hash="FIP606_ANA_cache/html/unnamed-chunk-19_b521e60e62d48727c41d32015967bf17">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>ymax_pl <span class="ot">&lt;-</span> <span class="fu">lm</span>(raiz_sev2 <span class="sc">~</span> trat <span class="sc">+</span> <span class="fu">factor</span>(bloco),</span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> sev3)</span>
 <span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>ymax_pl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -907,29 +907,31 @@ Residuals     12 0.42117 0.035097
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>medias_ymax_pl <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(ymax_pl, <span class="sc">~</span> bloco)</span>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>medias_ymax_pl <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(ymax_pl, <span class="sc">~</span> trat)</span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>medias_ymax_pl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> bloco emmean     SE df lower.CL upper.CL
- 1      0.645 0.0838 12    0.463    0.828
- 2      0.949 0.0838 12    0.767    1.132
- 3      0.912 0.0838 12    0.729    1.095
- 4      0.704 0.0838 12    0.522    0.887
+<pre><code> trat emmean     SE df lower.CL upper.CL
+ 1     0.911 0.0937 12    0.707    1.115
+ 2     0.734 0.0937 12    0.530    0.938
+ 3     0.662 0.0937 12    0.458    0.866
+ 4     0.744 0.0937 12    0.540    0.948
+ 5     0.963 0.0937 12    0.759    1.167
 
-Results are averaged over the levels of: trat 
+Results are averaged over the levels of: bloco 
 Confidence level used: 0.95 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cld</span>(medias_ymax_pl, <span class="at">Letters =</span> letters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> bloco emmean     SE df lower.CL upper.CL .group
- 1      0.645 0.0838 12    0.463    0.828  a    
- 4      0.704 0.0838 12    0.522    0.887  a    
- 3      0.912 0.0838 12    0.729    1.095  a    
- 2      0.949 0.0838 12    0.767    1.132  a    
+<pre><code> trat emmean     SE df lower.CL upper.CL .group
+ 3     0.662 0.0937 12    0.458    0.866  a    
+ 2     0.734 0.0937 12    0.530    0.938  a    
+ 4     0.744 0.0937 12    0.540    0.948  a    
+ 1     0.911 0.0937 12    0.707    1.115  a    
+ 5     0.963 0.0937 12    0.759    1.167  a    
 
-Results are averaged over the levels of: trat 
+Results are averaged over the levels of: bloco 
 Confidence level used: 0.95 
-P value adjustment: tukey method for comparing a family of 4 estimates 
+P value adjustment: tukey method for comparing a family of 5 estimates 
 significance level used: alpha = 0.05 
 NOTE: If two or more means share the same grouping symbol,
       then we cannot show them to be different.
