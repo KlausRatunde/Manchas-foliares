@@ -25,7 +25,7 @@ viveiro
 ## Distribuição dos tratamentos
 
 ```{r}
-tratamentos <- c("T1", "T2", "T3", "T4", "T5")
+tratamentos <- c("Fert + Fung + Fung", "Fung + Fert + Fung", "Fert + Fert + Fert", "Fungicida", "Testemunha")
 blocos <- 4
 delineamento <- design.rcbd(trt = tratamentos, r = blocos, seed = 123)
 print(delineamento$book)

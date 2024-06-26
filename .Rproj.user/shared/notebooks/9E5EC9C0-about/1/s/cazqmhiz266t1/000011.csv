@@ -1,0 +1,4 @@
+"0","tratamentos <- c(""Fert + Fung + Fung"", ""Fung + Fert + Fung"", ""Fert + Fert + Fert"", ""Fungicida"", ""Testemunha"")"
+"0","blocos <- 4"
+"0","delineamento <- design.rcbd(trt = tratamentos, r = blocos, seed = 123)"
+"0","print(delineamento$book)"
